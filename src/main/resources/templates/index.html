@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>员工编号</td>
+            <td>员工姓名</td>
+            <td>员工上级</td>
+            <td>员工工资</td>
+            <td>员工生日</td>
+            <td>员工奖金</td>
+        </tr>
+        <tr th:each="item:${emps}">
+            <td th:text="${item.ename}"></td>
+            <td th:text="${item.job}"></td>
+            <td th:text="${item.mgr}"></td>
+            <td th:text="${item.hierdate}"></td>
+            <td th:text="${item.sal}"></td>
+            <td th:text="${item.comm}"></td>
+            <td>
+                <a href="#" th:href="@{'edit?empno='+${item.empno}}" >编辑</a>
+                <a href="#" th:href="@{'delete?empno='+${item.empno}}" >删除</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

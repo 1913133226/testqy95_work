@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增页面</title>
+</head>
+<body>
+<form action="saveOrUpdate" module="post">
+    <table>
+        <tr>
+            <td>部门名称</td>
+            <td>
+                <input type="hidden" name="deptno" th:value="${byId?.deptno}">
+                <input type="text" name="dname" value="开发部" th:value="${byId?.dname}"/>
+            </td>
+            <td>部门位置</td>
+            <td>
+                <input type="text" name="loc" th:value="${byId?.loc}"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="提交"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.springboot.dao.DeptDao">
+    <select id="listAll" resultType="com.aaa.springboot.entity.Dept">
+        select * from dept
+    </select>
+    <select id="findById" resultType="com.aaa.springboot.entity.Dept">
+        select * from dept where deptno=#{deptno}
+    </select>
+    <insert id="save" >
+        insert into dept values(#{deptno},#{dname},#{loc})
+    </insert>
+    <delete id="delete">
+        delete from dept  where deptno=#{deptno}
+    </delete>
+    <update id="update">
+        update dept set dname=#{dname},loc=#{loc} where deptno=#{deptno}
+    </update>
+</mapper>
